@@ -5,6 +5,7 @@ import styled from 'styled-components';
 
 const ElementModal = () => {
   const { elementModal, setElementModal } = useContext(Context);
+  
   if (elementModal) {
     const {
       symbol,
@@ -64,7 +65,7 @@ const ElementModal = () => {
                 </Data>
 
                 <Data>
-                  <strong>Oxidation States:</strong> {oxidation_states.map((ox_state, i) => i+1  != oxidation_states.length ? `${ox_state}, ` : `${ox_state}`)}
+                  <strong>Oxidation States:</strong> {oxidation_states?.map((ox_state, i) => i+1  != oxidation_states.length ? `${ox_state}, ` : `${ox_state}`)}
                 </Data>
 
                 <Data>
@@ -122,7 +123,7 @@ const ElementModal = () => {
                 </Data>
 
                 <Data>
-                  <strong>Oxidation States:</strong> {oxidation_states.map((ox_state, i) => i+1  != oxidation_states.length ? `${ox_state}, ` : `${ox_state}`)}
+                  <strong>Oxidation States:</strong> {oxidation_states?.map((ox_state, i) => i+1  != oxidation_states.length ? `${ox_state}, ` : `${ox_state}`)}
                 </Data>
 
                 <Data>
@@ -257,6 +258,7 @@ const BasicDataSlide = styled(IonSlide)`
   padding: 16px;
   padding-top: 5%;
   padding-bottom: 0;
+  padding-top: 100px;
 `;
 
 const InfoSlide = styled(IonSlide)`
@@ -306,11 +308,10 @@ const ElectronConfig = styled.div`
 
 const ModalBody = styled.div`
   width: 100%;
-  height: 100%;
+  height: 95%;
   display: flex;
   justify-content: center;
-  /* padding: 5%; */
-  padding-top: 0;
+  /* padding-top: 0; */
 `;
 
 const Data = styled.p`

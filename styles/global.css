@@ -10,7 +10,9 @@ a:active,
 
 ion-searchbar .searchbar-clear-button.sc-ion-searchbar-ios {
   background-color: #ededed;
-  margin-right: 20px;
+  padding-right: 30px;
+  padding-left: 30px;
+  border-radius: 10px;
 }
 
 ion-select-option {
@@ -37,6 +39,14 @@ ion-select-option .select-icon-inner {
 ion-toolbar {
   height: 50px;
 }
+
+/* ion-content {
+  position: fixed !important; 
+}
+
+ion-header{
+  position: fixed !important;
+} */
 
 .ion-select,
 .ion-item,

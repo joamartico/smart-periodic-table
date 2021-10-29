@@ -19,11 +19,8 @@ function MyApp({ Component, pageProps }) {
 
         {/* SEO  */}
         <title>Smart Periodic Table</title>
-        <meta
-          name="google-site-verification"
-          // content="3XoSVdS7QLQWutddbE1sJ60XT3mFR-WXrP80V4AharU"
-        />
-        <meta name="description" content="Discover the best Periodic table on the Internet." />
+        <meta name="google-site-verification" content="3XoSVdS7QLQWutddbE1sJ60XT3mFR-WXrP80V4AharU" />
+        <meta name="description" content="Discover the best Smart Periodic Table on the Internet." />
         <meta name="keywords" content="periodic table, chemistry, elements" />
 
         {/*  PWA  */}

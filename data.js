@@ -5059,7 +5059,7 @@ export const elements = [
         iupac_ordering: 100,
         IUPAC_ordering: 100,
         round_level: "2P°3/2",
-        ionization_energies: [
+        ionization_energies: [ 
             11.81381,
             21.591,
             34.871,
@@ -14555,7 +14555,7 @@ export const elements = [
             "6s": -0.841848,
             "7s": -0.076176
         },
-        radius: "",
+        radius: 2.7,
         boiling_point:"",
         brinell_hardness: " m<sup>-2</sup>",
         bulk_modulus: "",
