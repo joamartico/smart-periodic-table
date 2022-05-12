@@ -1,11 +1,11 @@
 import { IonModal, IonContent, IonSlides, IonSlide } from '@ionic/react';
-import React, { useContext, useRef,} from 'react';
+import React, { useContext, useRef } from 'react';
 import { Context } from '../Context';
 import styled from 'styled-components';
 
 const ElementModal = () => {
   const { elementModal, setElementModal } = useContext(Context);
-  
+
   if (elementModal) {
     const {
       symbol,
@@ -21,7 +21,13 @@ const ElementModal = () => {
       radius,
       electron_configuration_semantic,
       description,
-      oxidation_states
+      oxidation_states,
+      hardness,
+      electrical_resistivity,
+      thermal_conductivity,
+      superconduction_temperature,
+      bulk_modulus,
+      brinell_hardness,
     } = elementModal;
 
     const slideOptions = {
@@ -30,7 +36,7 @@ const ElementModal = () => {
       // slidesPerView: 2,
     };
 
-    const ref = useRef()
+    const ref = useRef();
 
     return (
       <Modal
@@ -47,57 +53,92 @@ const ElementModal = () => {
           <Slides options={slideOptions}>
             <BasicDataSlide>
               {/* <Padding> */}
-                <Data>
-                  <strong>Atomic Number:</strong> {atomic_number}
-                </Data>
-                <Data>
-                  <strong>Atomic Mass:</strong> {atomic_mass}
-                </Data>
-                <Data>
-                  <strong>Category:</strong> {category}
-                </Data>
+              <Data>
+                <strong>Atomic Number:</strong> {atomic_number}
+              </Data>
+              <Data>
+                <strong>Atomic Mass:</strong> {atomic_mass}
+              </Data>
+              <Data>
+                <strong>Category:</strong> {category}
+              </Data>
 
-                <Data>
-                  <ElectronConfig>
+              <Data>
+                <ElectronConfig>
                   <strong>Electron Configuration:&nbsp;</strong>
-                  <div  dangerouslySetInnerHTML={{ __html: electron_configuration_semantic }} style={{marginTop: -4}}/>
-                  </ElectronConfig>
-                </Data>
+                  <div
+                    dangerouslySetInnerHTML={{ __html: electron_configuration_semantic }}
+                    style={{ marginTop: -4 }}
+                  />
+                </ElectronConfig>
+              </Data>
 
-                <Data>
-                  <strong>Oxidation States:</strong> {oxidation_states?.map((ox_state, i) => i+1  != oxidation_states.length ? `${ox_state}, ` : `${ox_state}`)}
-                </Data>
+              <Data>
+                <strong>Oxidation States:</strong>
+                {oxidation_states?.map((ox_state, i) =>
+                  i + 1 != oxidation_states.length ? `${ox_state}, ` : `${ox_state}`
+                )}
+              </Data>
 
-                <Data>
-                  <strong>Electronegativity:</strong> {electronegativity}
-                </Data>
+              <Data>
+                <strong>Electronegativity:</strong> {electronegativity}
+              </Data>
 
-                <Data>
-                  <strong>Density:</strong> {density}
-                </Data>
+              <Data>
+                <strong>Density: </strong> {density}
+              </Data>
 
-                <Data>
-                  <strong>Radius:</strong> {radius}
-                </Data>
-                <Data>
-                  <strong>Electron Affinity:</strong> {electron_affinity}
-                </Data>
-                
-                <Data>
-                  <strong>Melt Temperature:</strong> {melt_temperature} K
-                </Data>
-                <Data>
-                  <strong>Boil Temperature:</strong> {boil_temperature} K
-                </Data>
+              <Data>
+                <strong>Radius: </strong> {radius}
+              </Data>
+              <Data>
+                <strong>Electron Affinity:</strong> {electron_affinity}
+              </Data>
 
-                
+              <Data>
+                <strong>Melt Temperature:</strong> {melt_temperature} K
+              </Data>
+              <Data>
+                <strong>Boil Temperature:</strong> {boil_temperature} K
+              </Data>
+              <Data>
+                <strong>Electrical Resistivity:</strong>
+                <div
+                  dangerouslySetInnerHTML={{ __html: electrical_resistivity }}
+                />
+              </Data>
+              <Data>
+                <strong>Thermal Conductivity:</strong>
+                <div
+                  dangerouslySetInnerHTML={{ __html: thermal_conductivity }}
+                />
+              </Data>
+              <Data>
+                <strong>Hardness:</strong> {hardness}
+              </Data>
+              <Data>
+                <strong>Bulk Modulus:</strong> {bulk_modulus}
+              </Data>
+              <Data>
+                <strong>Brinell Hardness:</strong>
+                <div
+                  dangerouslySetInnerHTML={{ __html: brinell_hardness }}
+                />
+              </Data>
+              <Data>
+                <strong>Superconduction Temperature:</strong>
+                <div
+                  dangerouslySetInnerHTML={{ __html: superconduction_temperature }}
+                />
+              </Data>
+
               {/* </Padding> */}
             </BasicDataSlide>
 
             <InfoSlide>
               {/* <Padding> */}
-                <InfoTitle>Properties & Uses</InfoTitle>
-                <DescriptionText>{description}</DescriptionText>
+              <InfoTitle>Properties & Uses</InfoTitle>
+              <DescriptionText>{description}</DescriptionText>
               {/* </Padding> */}
             </InfoSlide>
           </Slides>
@@ -105,50 +146,86 @@ const ElementModal = () => {
           <ModalBody>
             <BasicDataSlide>
               {/* <Padding> */}
-                <Data>
-                  <strong>Atomic Number:</strong> {atomic_number}
-                </Data>
-                <Data>
-                  <strong>Atomic Mass:</strong> {atomic_mass}
-                </Data>
-                <Data>
-                  <strong>Category:</strong> {category}
-                </Data>
+              <Data>
+                <strong>Atomic Number:</strong>&nbsp;{atomic_number}
+              </Data>
+              <Data>
+                <strong>Atomic Mass:</strong>&nbsp;{atomic_mass}
+              </Data>
+              <Data>
+                <strong>Category:</strong> &nbsp;{category}
+              </Data>
 
-                <Data>
-                  <ElectronConfig>
+              <Data>
+                <ElectronConfig>
                   <strong>Electron Configuration:&nbsp;</strong>
-                  <div  dangerouslySetInnerHTML={{ __html: electron_configuration_semantic }} style={{marginTop: -4}}/>
-                  </ElectronConfig>
-                </Data>
+                  <div
+                    dangerouslySetInnerHTML={{ __html: electron_configuration_semantic }}
+                    style={{ marginTop: -4 }}
+                  />
+                </ElectronConfig>
+              </Data>
 
-                <Data>
-                  <strong>Oxidation States:</strong> {oxidation_states?.map((ox_state, i) => i+1  != oxidation_states.length ? `${ox_state}, ` : `${ox_state}`)}
-                </Data>
+              <Data>
+                <strong>Oxidation States:</strong>&nbsp;
+                {oxidation_states?.map((ox_state, i) =>
+                  i + 1 != oxidation_states.length ? `${ox_state}, ` : `${ox_state}`
+                )}
+              </Data>
 
-                <Data>
-                  <strong>Electronegativity:</strong> {electronegativity}
-                </Data>
-                
-                <Data>
-                  <strong>Density:</strong> {density}
-                </Data>
+              <Data>
+                <strong>Electronegativity:</strong>&nbsp;{electronegativity}
+              </Data>
 
-                <Data>
-                  <strong>Radius:</strong> {radius}
-                </Data>
-                <Data>
-                  <strong>Electron Affinity:</strong> {electron_affinity}
-                </Data>
-                
-                <Data>
-                  <strong>Melt Temperature:</strong> {melt_temperature} K
-                </Data>
-                <Data>
-                  <strong>Boil Temperature:</strong> {boil_temperature} K
-                </Data>
+              <Data>
+                <strong>Density:</strong>&nbsp;{density}
+              </Data>
 
-                {/* <p> --- </p>
+              <Data>
+                <strong>Radius:</strong>&nbsp;{radius}
+              </Data>
+              <Data>
+                <strong>Electron Affinity:</strong>&nbsp;{electron_affinity}
+              </Data>
+
+              <Data>
+                <strong>Melt Temperature:</strong>&nbsp;{melt_temperature} K
+              </Data>
+              <Data>
+                <strong>Boil Temperature:</strong>&nbsp;{boil_temperature} K
+              </Data>
+              <Data>
+                <strong>Electrical Resistivity:</strong>&nbsp;
+                <div
+                  dangerouslySetInnerHTML={{ __html: electrical_resistivity }}
+                />
+              </Data>
+              <Data>
+                <strong>Thermal Conductivity:</strong>&nbsp;
+                <div
+                  dangerouslySetInnerHTML={{ __html: thermal_conductivity }}
+                />
+              </Data>
+              <Data>
+                <strong>Hardness:</strong>&nbsp;{hardness}
+              </Data>
+              <Data>
+                <strong>Bulk Modulus:</strong>&nbsp;{bulk_modulus}
+              </Data>
+              <Data>
+                <strong>Brinell Hardness:</strong>&nbsp;
+                <div
+                  dangerouslySetInnerHTML={{ __html: brinell_hardness }}
+                />
+              </Data>
+              <Data>
+                <strong>Superconduction Temperature:</strong>&nbsp;
+                <div
+                  dangerouslySetInnerHTML={{ __html: superconduction_temperature }}
+                />
+              </Data>
+
+              {/* <p> --- </p>
 
                 <p> --- </p> */}
               {/* </Padding> */}
@@ -156,8 +233,8 @@ const ElementModal = () => {
 
             <InfoSlide>
               {/* <Padding> */}
-                <InfoTitle>Properties & Uses</InfoTitle>
-                <DescriptionText>{description}</DescriptionText>
+              <InfoTitle>Properties & Uses</InfoTitle>
+              <DescriptionText>{description}</DescriptionText>
               {/* </Padding> */}
             </InfoSlide>
           </ModalBody>
@@ -177,17 +254,15 @@ const Modal = styled(IonModal)`
   --border-radius: 15px !important;
   /* margin-top: -50px; */
 
-
-
-
   font-family: arial;
   /* justify-content: center;
   align-items: center; */
 `;
 
-const Padding = styled.div`height: 100%;
-padding: 15px;
-height: 100%;
+const Padding = styled.div`
+  height: 100%;
+  padding: 15px;
+  height: 100%;
   /* width: 90%; */
   width: 100%;
   background: red;
@@ -204,7 +279,7 @@ height: 100%;
 const TitleRow = styled.div`
   display: flex;
   flex-direction: row;
-  
+
   height: 25%;
   width: ${window.screen.width < 1000 ? '100%' : '48%'};
   justify-content: left;
@@ -220,7 +295,6 @@ const Symbol = styled.p`
   font-size: 13.5vh;
   margin-top: 0;
   margin-bottom: 20px;
-
 `;
 
 const Name = styled.div`
@@ -251,14 +325,14 @@ const BasicDataSlide = styled(IonSlide)`
   height: ${window.screen.width < 1000 ? '90%' : '75%'};
   overflow-y: auto;
   overflow-x: hidden;
-  /* padding-bottom: auto; */
   text-align: start;
   align-items: flex-start !important;
   font-size: 15px;
   padding: 16px;
-  padding-top: 5%;
+  /* padding-top: 5%; */
   padding-bottom: 0;
-  padding-top: 100px;
+  /* padding-top: 100px; */
+  padding-top: 40%;
 `;
 
 const InfoSlide = styled(IonSlide)`
@@ -302,7 +376,7 @@ const ElectronConfig = styled.div`
   text-align: start;
   display: flex;
   flex-direction: row;
-  flex-wrap:wrap;
+  flex-wrap: wrap;
   align-items: center;
 `;
 
@@ -315,9 +389,11 @@ const ModalBody = styled.div`
 `;
 
 const Data = styled.p`
-    margin: 0 0 28px 0;
-    font-size: 16px;
-    line-height: 15px;
-    width: 100%;
+  margin: 0 0 28px 0;
+  font-size: 16px;
+  line-height: 15px;
+  width: 100%;
+  display: flex;
+  align-items: flex-end;
 
-`
+`;

@@ -53,6 +53,13 @@ const PeriodicTable = () => {
                   electron_configuration_semantic={element.electron_configuration}
                   description={element.summary}
                   oxidation_states={element.common_oxidation_states}
+                  hardness={element.hardness}
+                  electrical_resistivity={element.electrical_resistivity}
+                  thermal_conductivity={element.thermal_conductivity}
+                  superconduction_temperature={element.superconduction_temperature}
+                  bulk_modulus={element.bulk_modulus}
+                  brinell_hardness={element.brinell_hardness}
+                  
                 />
               ))}
 

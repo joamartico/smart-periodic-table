@@ -20,11 +20,11 @@ function MyApp({ Component, pageProps }) {
         {/* SEO  */}
         <title>Smart Periodic Table</title>
         <meta name="google-site-verification" content="3XoSVdS7QLQWutddbE1sJ60XT3mFR-WXrP80V4AharU" />
+        <meta name="google-site-verification" content="TNMELgTuWxEIutAqoWQsx70qww7bzbL8AW1qPskOm-g" />
         <meta name="description" content="Discover the best Smart Periodic Table on the Internet." />
         <meta name="keywords" content="periodic table, chemistry, elements" />
 
         {/*  PWA  */}
-        {/* <preference name="KeyboardDisplayRequiresUserAction" value="false" /> */}
         <meta
           name="viewport"
           content="width=device-width, initial-scale=1, minimum-scale=1.0, maximum-scale=1.0, viewport-fit=cover, user-scalable=no"

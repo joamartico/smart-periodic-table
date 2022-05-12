@@ -2,7 +2,16 @@ import React, { useContext, useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { Context } from '../Context';
 
+//Your JS-based app needs to make two requests to an external API to fetch two sets of data: customers and orders. Due to how you'll need to use this data, a good strategy is to match and merge the two lists into one: a list of customers where each item can have a nested list of orders. Build a denormalize function which takes in two arrays and the reference ID (foreign key), the first one being the primary type (in this case denormalize(customers, orders, 'customerId')), and returns a new array with the nested structure described above. You can check the test file (with a couple of example cases) in the filesystem tab to your left.
 
+function denormalize({ primary, related, relatedName, referenceId }) {
+  return primary.map(primaryItem => {
+    const relatedItems = related.filter(relatedItem => {
+      return relatedItem[relatedName] === primaryItem[referenceId];
+    });
+    return { ...primaryItem, [relatedName]: relatedItems };
+  });
+}
 const Element = props => {
   const {
     symbol,
@@ -16,6 +25,12 @@ const Element = props => {
     boil_temperature,
     melt_temperature,
     radius,
+    hardness,
+    electrical_resistivity,
+    thermal_conductivity,
+    superconduction_temperature,
+    bulk_modulus,
+    brinell_hardness
   } = props;
 
   const { properties, searchText, setSearchText, setElementModal, propertiesMaxVals } = useContext(
@@ -38,7 +53,7 @@ const Element = props => {
           break;
 
         case 'Radius':
-          totalPercentages = (totalPercentages + radius / propertiesMaxVals[i]) ;
+          totalPercentages = totalPercentages + radius / propertiesMaxVals[i];
           break;
 
         case 'Electronegativity':

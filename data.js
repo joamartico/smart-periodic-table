@@ -1,12 +1,3 @@
-
-
-
-
-
-
-
-
-
 export const elements = [
     {
         name: "Hydrogen",
